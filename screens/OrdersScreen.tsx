@@ -1,10 +1,9 @@
-
 import React from 'react';
 import PageHeader from '../components/PageHeader';
 import DataTable from '../components/DataTable';
 import StatusBadge from '../components/StatusBadge';
 import type { Order } from '../types';
-import { MOCK_ORDERS } from '../constants';
+import { MOCK_ORDERS, ICONS } from '../constants';
 
 const OrdersScreen: React.FC = () => {
     
@@ -39,14 +38,27 @@ const OrdersScreen: React.FC = () => {
             
             {/* Filters */}
             <div className="mb-6 p-4 bg-white rounded-lg shadow-card flex items-center gap-4 text-base">
-                 <select className="border border-neutral-300 rounded-md px-3 py-1.5">
-                    <option>Status: All</option>
-                    <option>New</option>
-                    <option>In Progress</option>
-                    <option>Fulfilled</option>
-                </select>
-                <input type="text" placeholder="Filter by Event..." className="border border-neutral-300 rounded-md px-3 py-1.5 w-48"/>
-                <input type="text" placeholder="Filter by Marketplace..." className="border border-neutral-300 rounded-md px-3 py-1.5 w-48"/>
+                <div className="relative">
+                    <select className="bg-neutral-700 text-neutral-100 rounded-md pl-3 pr-8 py-1.5 appearance-none focus:outline-none focus:ring-2 focus:ring-primary border border-transparent">
+                        <option>Status: All</option>
+                        <option>New</option>
+                        <option>In Progress</option>
+                        <option>Fulfilled</option>
+                    </select>
+                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-neutral-300">
+                        {ICONS.chevronDown}
+                    </div>
+                </div>
+                <input
+                    type="text"
+                    placeholder="Filter by Event..."
+                    className="bg-neutral-700 text-neutral-100 placeholder-neutral-300 rounded-md px-3 py-1.5 w-48 focus:outline-none focus:ring-2 focus:ring-primary border border-transparent"
+                />
+                <input
+                    type="text"
+                    placeholder="Filter by Marketplace..."
+                    className="bg-neutral-700 text-neutral-100 placeholder-neutral-300 rounded-md px-3 py-1.5 w-48 focus:outline-none focus:ring-2 focus:ring-primary border border-transparent"
+                />
             </div>
 
             <DataTable columns={orderColumns} data={MOCK_ORDERS} />

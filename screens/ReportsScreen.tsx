@@ -1,8 +1,8 @@
-
 import React from 'react';
 import { BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import PageHeader from '../components/PageHeader';
-import { REPORT_CHART_DATA } from '../constants';
+import { REPORT_CHART_DATA, ICONS } from '../constants';
+import DateInput from '../components/DateInput';
 
 const ChartCard: React.FC<{title: string, children: React.ReactNode}> = ({ title, children }) => (
     <div className="bg-white p-6 rounded-lg shadow-card">
@@ -26,14 +26,19 @@ const ReportsScreen: React.FC = () => {
             </PageHeader>
 
             <div className="mb-6 p-4 bg-white rounded-lg shadow-card flex items-center gap-4 text-base">
-                <input type="date" className="border border-neutral-300 rounded-md px-3 py-1.5"/>
+                <DateInput className="w-48" placeholder="ДД.ММ.ГГГГ" ariaLabel="Start date" />
                 <span className="text-neutral-500">to</span>
-                <input type="date" className="border border-neutral-300 rounded-md px-3 py-1.5"/>
-                 <select className="border border-neutral-300 rounded-md px-3 py-1.5">
-                    <option>Club: All</option>
-                    <option>Man United</option>
-                    <option>Chelsea</option>
-                </select>
+                <DateInput className="w-48" placeholder="ДД.ММ.ГГГГ" ariaLabel="End date" />
+                 <div className="relative">
+                    <select className="bg-neutral-700 text-neutral-100 rounded-md pl-3 pr-8 py-1.5 appearance-none focus:outline-none focus:ring-2 focus:ring-primary border border-transparent">
+                        <option>Club: All</option>
+                        <option>Man United</option>
+                        <option>Chelsea</option>
+                    </select>
+                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-neutral-300">
+                        {ICONS.chevronDown}
+                    </div>
+                </div>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

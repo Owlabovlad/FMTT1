@@ -1,6 +1,7 @@
-
 import React from 'react';
 import PageHeader from '../components/PageHeader';
+import DateInput from '../components/DateInput';
+import { ICONS } from '../constants';
 
 const AuditLogsScreen: React.FC = () => {
     const mockLogs = [
@@ -21,14 +22,23 @@ const AuditLogsScreen: React.FC = () => {
             </PageHeader>
             
              <div className="mb-6 p-4 bg-white rounded-lg shadow-card flex items-center gap-4 text-base">
-                 <select className="border border-neutral-300 rounded-md px-3 py-1.5">
-                    <option>Module: All</option>
-                    <option>Inventory</option>
-                    <option>Marketplace</option>
-                    <option>Pricing</option>
-                </select>
-                <input type="text" placeholder="Filter by User/Bot..." className="border border-neutral-300 rounded-md px-3 py-1.5 w-48"/>
-                 <input type="date" className="border border-neutral-300 rounded-md px-3 py-1.5"/>
+                <div className="relative">
+                    <select className="bg-neutral-700 text-neutral-100 rounded-md pl-3 pr-8 py-1.5 appearance-none focus:outline-none focus:ring-2 focus:ring-primary border border-transparent">
+                        <option>Module: All</option>
+                        <option>Inventory</option>
+                        <option>Marketplace</option>
+                        <option>Pricing</option>
+                    </select>
+                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-neutral-300">
+                        {ICONS.chevronDown}
+                    </div>
+                </div>
+                <input 
+                    type="text" 
+                    placeholder="Filter by User/Bot..." 
+                    className="bg-neutral-700 text-neutral-100 placeholder-neutral-300 rounded-md px-3 py-1.5 w-48 focus:outline-none focus:ring-2 focus:ring-primary border border-transparent"
+                />
+                 <DateInput className="w-40" ariaLabel="Filter by date" />
             </div>
 
              <div className="bg-white rounded-lg shadow-card overflow-hidden">

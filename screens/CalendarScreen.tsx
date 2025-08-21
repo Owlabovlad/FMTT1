@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import PageHeader from '../components/PageHeader';
 import { MOCK_CALENDAR_EVENTS } from '../constants';
@@ -50,8 +49,8 @@ const CalendarScreen: React.FC = () => {
                     <button className="px-3 py-1.5 bg-neutral-100 text-neutral-700 rounded-md hover:bg-neutral-200">Week</button>
                 </div>
                 <div className="w-px h-6 bg-neutral-200"></div>
-                <input type="text" placeholder="Filter by Club..." className="border border-neutral-300 rounded-md px-3 py-1.5 w-48"/>
-                <input type="text" placeholder="Filter by Competition..." className="border border-neutral-300 rounded-md px-3 py-1.5 w-48"/>
+                <input type="text" placeholder="Filter by Club..." className="bg-neutral-700 text-neutral-100 placeholder-neutral-300 rounded-md px-3 py-1.5 w-48 focus:outline-none focus:ring-2 focus:ring-primary border border-transparent"/>
+                <input type="text" placeholder="Filter by Competition..." className="bg-neutral-700 text-neutral-100 placeholder-neutral-300 rounded-md px-3 py-1.5 w-48 focus:outline-none focus:ring-2 focus:ring-primary border border-transparent"/>
                 <label className="flex items-center gap-2">
                     <input type="checkbox" className="rounded text-primary focus:ring-primary"/>
                     <span>Inventory > 0</span>
