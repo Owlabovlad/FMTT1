@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-g" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ticket Operations Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          fontSize: {
+            'xs': ['0.785rem', '1.14rem'],    // 11px
+            'sm': ['0.857rem', '1.285rem'],   // 12px
+            'base': ['1rem', '1.57rem'],     // 14px
+            'lg': ['1.14rem', '1.71rem'],    // 16px
+            'xl': ['1.285rem', '2rem'],      // 18px
+            '2xl': ['1.57rem', '2.14rem'],   // 22px
+            '3xl': ['1.85rem', '2.4rem'],    // 26px
+            '4xl': ['2.285rem', '2.85rem'],  // 32px
+          },
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'SF Pro Text', 'Segoe UI', 'Roboto', 'system-ui', 'sans-serif'],
+              mono: ['JetBrains Mono', 'SFMono-Regular', 'Menlo', 'monospace'],
+            },
+            colors: {
+              primary: '#ed3253',
+              'icon-accent': 'rgb(255, 81, 118)',
+              black: '#1f0f2e',
+
+              neutral: {
+                50: '#f9fafb',
+                100: '#f4f5f7',
+                200: '#ededed',
+                300: '#d1d5db',
+                500: '#6b7280',
+                700: '#374151',
+                900: '#1f0f2e',
+              },
+              success: {
+                100: '#ecfdf5',
+                600: '#059669',
+                800: '#047857',
+              },
+              warning: {
+                100: '#fffbeb',
+                600: '#d97706',
+                800: '#b45309',
+              },
+              danger: {
+                100: '#fef2f2',
+                600: '#dc2626',
+                800: '#b91c1c',
+              },
+              info: {
+                100: '#eff6ff',
+                600: '#2563eb',
+                800: '#1d4ed8',
+              },
+            },
+            boxShadow: {
+              card: '0 1px 2px rgba(31,15,46,0.07), 0 4px 12px rgba(31,15,46,0.05)',
+              focus: '0 0 0 3px rgba(237, 50, 83, 0.35)',
+            },
+          }
+        }
+      }
+    </script>
+    <style>
+      html { 
+        font-size: 14px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      body {
+        font-family: 'Inter', 'SF Pro Text', 'Segoe UI', 'Roboto', 'system-ui', sans-serif;
+        background-color: #f4f5f7; /* neutral-100 */
+        color: #1f0f2e; /* black */
+      }
+      .font-sans {
+        font-family: 'Inter', 'SF Pro Text', 'Segoe UI', 'Roboto', 'system-ui', 'sans-serif';
+      }
+      .font-mono {
+        font-family: 'JetBrains Mono', 'SFMono-Regular', 'Menlo', 'monospace';
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "react": "https://esm.sh/react@^19.1.1",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.8.1",
+    "recharts": "https://esm.sh/recharts@^3.1.2",
+    "@google/genai": "https://esm.sh/@google/genai"
+  }
+}
+</script>
+</head>
+  <body class="text-base">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
